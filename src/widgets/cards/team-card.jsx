@@ -1,25 +1,29 @@
 import PropTypes from "prop-types";
-import { Card, Avatar, Typography } from "@material-tailwind/react";
+import { Card, Avatar, Typography, Button } from "@material-tailwind/react";
 
 export function TeamCard({ img, name, position, socials }) {
   return (
-    <Card color="transparent" shadow={false} className="text-center">
+    <Card color="transparent" shadow={false} className="rounded-0 transform transition-all hover:scale-105 bg-white shadow-lg text-left rounded-2xl p-7 ">
       <Avatar
         src={img}
         alt={name}
         size="xxl"
-        variant="rounded"
-        className="h-full w-full shadow-lg shadow-gray-500/25"
+        variant=""
+        className="h-full w-full shadow-lg shadow-black/50 rounded-lg"
       />
-      <Typography variant="h5" color="blue-gray" className="mt-6 mb-1">
+      <Typography variant="h5" className="font-raleway mt-6 mb-1 text-4xl text-amarilloveige font-extrabold">
         {name}
       </Typography>
+      
       {position && (
-        <Typography className="font-bold text-blue-gray-500">
+        <Typography className="font-raleway font-light text-xl text-black  ">
           {position}
         </Typography>
+        
+        
       )}
-      {socials && <div className="mx-auto mt-5">{socials}</div>}
+      <Button className=" max-w-[200px] mt-4">Detalles</Button>
+      
     </Card>
   );
 }

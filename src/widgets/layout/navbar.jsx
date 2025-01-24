@@ -31,9 +31,8 @@ export function Navbar({ brandName, routes, action }) {
           className="capitalize"
         >
           {href ? (
-            <a
-              href={href}
-              target={target}
+            <p
+              
               className="flex items-center gap-1 p-1 font-bold"
             >
               {icon &&
@@ -41,7 +40,7 @@ export function Navbar({ brandName, routes, action }) {
                   className: "w-[18px] h-[18px] opacity-75 mr-1",
                 })}
               {name}
-            </a>
+            </p>
           ) : (
             <Link
               to={path}
@@ -75,7 +74,7 @@ export function Navbar({ brandName, routes, action }) {
             target="_blank"
           >
             <Button variant="text" size="sm" color="white" fullWidth>
-              pro version
+              
             </Button>
           </a>
           {React.cloneElement(action, {
@@ -108,7 +107,7 @@ export function Navbar({ brandName, routes, action }) {
             className="mb-2 block"
           >
             <Button variant="text" size="sm" fullWidth>
-              pro version
+              
             </Button>
           </a>
           {React.cloneElement(action, {
@@ -121,21 +120,28 @@ export function Navbar({ brandName, routes, action }) {
 }
 
 Navbar.defaultProps = {
-  brandName: "Material Tailwind React",
+  brandName: (
+
+    <p className="font-raleway text-4xl text-amarilloveige font-black">
+      ZEUS
+    </p>
+
+
+  ),
   action: (
     <a
-      href="https://www.creative-tim.com/product/material-tailwind-kit-react"
-      target="_blank"
+      href=""
+      target=""
     >
-      <Button variant="gradient" size="sm" fullWidth>
-        free download
+      <Button  size="sm" className="bg-amarilloveige">
+        Reservar
       </Button>
     </a>
   ),
 };
 
 Navbar.propTypes = {
-  brandName: PropTypes.string,
+  brandName: PropTypes.node,
   routes: PropTypes.arrayOf(PropTypes.object).isRequired,
   action: PropTypes.node,
 };

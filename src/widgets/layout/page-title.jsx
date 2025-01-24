@@ -1,16 +1,19 @@
 import PropTypes from "prop-types";
 import { Typography } from "@material-tailwind/react";
-
-export function PageTitle({ section, heading, children }) {
+import { FaRankingStar } from "react-icons/fa6";
+export function PageTitle({ section, heading, children, background, icono}) {
   return (
-    <div className="mx-auto w-full px-4 text-center lg:w-6/12">
-      <Typography variant="lead" className="font-semibold">{section}</Typography>
-      <Typography variant="h2" color="blue-gray" className="my-3">
-        {heading}
+    <div className={`${background}  text-center flex items-center justify-center flex-col`}>
+      <Typography variant="lead" className="font-semibold text-amarilloveige text-center">
+        {section}
+        </Typography>
+      <Typography variant="h2" color="blue-gray" className="font-raleway my-3 text-4xl  md:text-5xl text-white font-bold">
+        {heading.toUpperCase()}
       </Typography>
-      <Typography variant="lead" className="text-blue-gray-500">
+      <Typography variant="lead" className="text-white">
         {children}
       </Typography>
+      {icono}
     </div>
   );
 }
